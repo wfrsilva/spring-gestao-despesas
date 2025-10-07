@@ -9,3 +9,9 @@ Neste vídeo te mostro como fazer seu primeiro sistema usando Spring boot, total
 https://www.youtube.com/watch?v=0V8OKTYNeU8
 
 
+---
+
+
+## Etapas do projeto
+### Iniciar o projeto com dependencias
+https://start.spring.io/
