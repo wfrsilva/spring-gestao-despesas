@@ -25,16 +25,23 @@ Arquivos baixados do [Spring Initializr]([https://start.spring.io/](https://star
 
 [20:50 - Arrastar para VsCode](https://youtu.be/0V8OKTYNeU8?t=1250)
 
+
+---
+
+
 ### H2 Console
 Rodar o projeto e Abrir as configuraçoes do H2
 [26:00 - Abrir H2 console](https://youtu.be/0V8OKTYNeU8?t=15600)
 
 http://localhost:8080/h2-console/
 
+---
+
+
+
 ### application.proprerties
 Só foi mostrado, ainda nao configurado. Será mais a frente.
 [27:20 - application.proprerties](https://youtu.be/0V8OKTYNeU8?t=1640)
-
 
 
 ```properties
@@ -45,6 +52,11 @@ spring.application.
 spring.application.
 spring.application.
 ```
+
+
+---
+---
+
 
 
 ### Criando a primeira classe Controller
