@@ -35,6 +35,8 @@ Rodar o projeto e Abrir as configuraçoes do H2
 
 http://localhost:8080/h2-console/
 
+
+
 ---
 
 
@@ -55,11 +57,95 @@ spring.application.
 
 
 ---
----
 
 
 
 ### Criando a primeira classe Controller
 [38:15 - Primeira Controller](https://youtu.be/0V8OKTYNeU8?t=2295)
+
+```java
+
+  @RequestMapping("/javadevweek")
+  @RestController
+  public class PrimeiraController {
+
+    @GetMapping("/helloword")
+    public String helloWorld()
+    {
+      return "Olá Mundo";
+    }//helloWorld
+    
+  }//PrimeiraController
+
+```
+
+http://localhot:8080/javadevweek/helloworld
+
+### Criando as pastas (pacotes)
+
+[46:05 - Criar pacote controller](https://youtu.be/0V8OKTYNeU8?t=2765)
+
+- Criar o pacote (pasta/diretorio) : controller
+- Criar o pacote (pasta/diretorio) : entity
+
+
+---
+
+
+### Criando GestaoDespesaController 
+[46:55 Criar o GestaoDespesaController.java](https://youtu.be/0V8OKTYNeU8?t=2815)
+- ../controller/GestaoDespesaController.java
+
+
+```java
+
+@RequestMapping("/gestao")
+public class GestaoDespesaController(){
+
+  @PostMapping("/create")
+  public void create()
+  {
+    
+  }//create
+
+
+}//GestaoDespesasController
+
+```
+
+
+---
+
+
+### Criando Despesa.java
+[55:40 - Criar o Despesa.java](https://youtu.be/0V8OKTYNeU8?t=3340) 
+- ../entity/Despesa.java
+
+```java
+
+@Entity
+@table(name="despesa")
+public class Despesa(){
+
+  @Id
+  @GeneratedValue(strategy = GenarationType.AUTO)
+  private UUID id;
+  private String descricao;
+  private LocalDate data;
+  private BigaDEcimal valor;
+  private String categoria;
+  private String email;
+
+  @CreatDate
+  private LocalDate data_criacao;
+  
+  //Criar GETs e SETs
+
+}//Despesa
+
+```
+
+
+---
 
 
