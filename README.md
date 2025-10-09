@@ -87,6 +87,7 @@ http://localhot:8080/javadevweek/helloworld
 
 - Criar o pacote (pasta/diretorio) : controller
 - Criar o pacote (pasta/diretorio) : entity
+- Criar o pacote (pasta/diretorio) : useCase
 
 
 ---
@@ -100,12 +101,16 @@ http://localhot:8080/javadevweek/helloworld
 ```java
 
 @RequestMapping("/gestao")
+@RestController
 public class GestaoDespesaController(){
 
+  @Autowired
+  CadastroDespesaUseCase cadastroDespesaUseCase;
+
   @PostMapping("/create")
-  public void create()
+  public void create(@RequestBody Despesa despesa)
   {
-    
+     cadastroDespesaUseCase.execute(despesa);
   }//create
 
 
@@ -125,11 +130,12 @@ public class GestaoDespesaController(){
 
 @Entity
 @table(name="despesa")
-public class Despesa(){
+public class Despesa{
 
   @Id
   @GeneratedValue(strategy = GenarationType.AUTO)
   private UUID id;
+
   private String descricao;
   private LocalDate data;
   private BigaDEcimal valor;
@@ -140,6 +146,18 @@ public class Despesa(){
   private LocalDate data_criacao;
   
   //Criar GETs e SETs
+  public UUID getId()
+  {
+    return id;
+  }
+
+public void setId(UUID id)
+{
+  this.id = id;
+}
+
+// Criar os demais set/get
+//Criar um toString
 
 }//Despesa
 
@@ -148,4 +166,55 @@ public class Despesa(){
 
 ---
 
+
+### Criando CadastrDespesaUseCase.java
+[01:03:35 - Criar o CadastrDespesaUseCase.java](https://youtu.be/0V8OKTYNeU8?t=3815) 
+- ../useCase/Despesa.java
+
+```java
+
+@Service
+public class CadastroDespesaUseCase{
+//controller recebe informacao e manda para o useCase
+
+  public void execute(Despesa despesa)
+  {
+    System.out.println("Categoria " + despesa.getCategoria());
+    System.out.println("E-mail " + despesa.getEmail());
+  System.out.println(despesa);
+  }//execute
+
+
+
+
+
+
+
+}//CadastroDespesaUseCase
+
+```
+
+### Fazer um ``request post`` para testar.
+[01:08:40 - post no Thunder Client](https://youtu.be/0V8OKTYNeU8?t=4120)
+
+ThunderClient ou outro (arquivos post.http).
+
+POST > http://localhost:8080/gestao/create
+Body 
+JSON Content
+```json
+{
+  "descricao": "Almoço de Segunda",
+  "valor":45,
+  "categoria':"refeição",
+  "email":"wfrsilva@gmail.com",
+  "data":"2025-06-09"
+}
+```
+
+
+Status 200 OK
+---
+
+# [2025-10-08 Paramos 01:18:40](https://youtu.be/0V8OKTYNeU8?t=4720)
 
