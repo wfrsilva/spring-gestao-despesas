@@ -206,7 +206,7 @@ JSON Content
 {
   "descricao": "Almoço de Segunda",
   "valor":45,
-  "categoria':"refeição",
+  "categoria":"refeição",
   "email":"wfrsilva@gmail.com",
   "data":"2025-06-09"
 }
