@@ -109,9 +109,21 @@ public class GestaoDespesaController(){
   CadastroDespesaUseCase cadastroDespesaUseCase;
 
   @PostMapping("/create")
-  public void create(@RequestBody Despesa despesa)
+  public ResponseEntity<?> create(@RequestBody Despesa despesa)
   {
-     cadastroDespesaUseCase.execute(despesa);
+
+
+
+    try
+    {
+       var result =  cadastroDespesaUseCase.execute(despesa);
+       return ResponseEntity.ok(result);
+    }//try
+    catch(IllegalArgumentException e)
+    {
+      return ResponseEntity.status(400).body(e.getMessage());
+    }//catch
+
   }//create
 
 
@@ -137,12 +149,19 @@ public class Despesa{
   @GeneratedValue(strategy = GenarationType.AUTO)
   private UUID id;
 
+  @Column(nullable = false)
   private String descricao;
+
+  @Column(nullable = false)
   private LocalDate data;
+
+  @Column(nullable = false)
   private BigaDEcimal valor;
 
-  @Column(length = 100)
+  @Column(length = 100, nullable = false)
   private String categoria;
+
+  @Column(nullable = false)
   private String email;
 
   @CreationTimestamp
@@ -188,14 +207,21 @@ public class CadastroDespesaUseCase{
     //System.out.println("Categoria " + despesa.getCategoria());
     //System.out.println("E-mail " + despesa.getEmail());
     //System.out.println(despesa);
-
+  
     System.out.println("===== ANTES DE SALVAR =====");
     System.out.println(despesa);
+
+    if(despesa.getCategoria() == null || despesa.getData == null || despesa.getDescricao() == null || despesa.getEmail() == null)
+    {
+      throw new IllegalArgumentException("Preencher todos os campos");
+    }
     
     despesa = despesaRepository.save(despesa);
 
     System.out.println("===== DEPOIS DE SALVAR =====");
     System.out.println(despesa);
+
+    return despesa;
       
   }//execute
 
@@ -285,7 +311,24 @@ public interface DespesaRepository extends JpaRepository<Despesa, UUID>{
 ```
 
 ---
+
+###
+[]()
+
+
 ---
+
+---
+---
+
+---
+---
+
+
+
+
+
+
 
 # [2025-10-08 Paramos 01:18:40](https://youtu.be/0V8OKTYNeU8?t=4720)
 
