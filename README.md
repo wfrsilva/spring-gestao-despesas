@@ -374,3 +374,5 @@ public class ErrorMessage {
 
 # [2025-10-08 Paramos 01:18:40](https://youtu.be/0V8OKTYNeU8?t=4720)
 
+# [2025-10-09 Paramos 01:48:10](https://youtu.be/0V8OKTYNeU8?t=6490)
+
