@@ -85,9 +85,9 @@ http://localhot:8080/javadevweek/helloworld
 
 [46:05 - Criar pacote controller](https://youtu.be/0V8OKTYNeU8?t=2765)
 
-- Criar o pacote (pasta/diretorio) : controller
-- Criar o pacote (pasta/diretorio) : entity
-- Criar o pacote (pasta/diretorio) : useCase
+- Criar o pacote (pasta/diretorio) : `controller`
+- Criar o pacote (pasta/diretorio) : `entity`
+- Criar o pacote (pasta/diretorio) : `useCase`
 
 
 ---
@@ -95,7 +95,7 @@ http://localhot:8080/javadevweek/helloworld
 
 ### Criando GestaoDespesaController 
 [46:55 Criar o GestaoDespesaController.java](https://youtu.be/0V8OKTYNeU8?t=2815)
-- ../controller/GestaoDespesaController.java
+- `../controller/GestaoDespesaController.java`
 
 
 ```java
@@ -124,7 +124,7 @@ public class GestaoDespesaController(){
 
 ### Criando Despesa.java
 [55:40 - Criar o Despesa.java](https://youtu.be/0V8OKTYNeU8?t=3340) 
-- ../entity/Despesa.java
+- `../entity/Despesa.java`
 
 ```java
 
@@ -139,6 +139,8 @@ public class Despesa{
   private String descricao;
   private LocalDate data;
   private BigaDEcimal valor;
+
+  @Column(length = 100)
   private String categoria;
   private String email;
 
@@ -169,7 +171,7 @@ public void setId(UUID id)
 
 ### Criando CadastrDespesaUseCase.java
 [01:03:35 - Criar o CadastrDespesaUseCase.java](https://youtu.be/0V8OKTYNeU8?t=3815) 
-- ../useCase/Despesa.java
+- `../useCase/Despesa.java`
 
 ```java
 
@@ -194,10 +196,10 @@ public class CadastroDespesaUseCase{
 
 ```
 
-### Fazer um ``request post`` para testar.
+### Fazer um `request post` para testar.
 [01:08:40 - post no Thunder Client](https://youtu.be/0V8OKTYNeU8?t=4120)
 
-ThunderClient ou outro (arquivos post.http).
+ThunderClient ou outro (arquivos `post.http`).
 
 POST > http://localhost:8080/gestao/create
 Body 
@@ -214,6 +216,49 @@ JSON Content
 
 
 Status 200 OK
+---
+
+### Salvar no Banco de Dados - application.proprerties
+[01:19:30 - Configurar Banco de Dados H2](https://youtu.be/0V8OKTYNeU8?t=4770)
+
+```properties
+spring.application.name=Gestao de Despesas Pessoais
+
+# ===== CONFIGURACOES H2 ======
+spring.datasource.url=jdbc:h2:file:./data/gestao-despesa
+spring.datasource.driveClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+
+```
+Ao salvar o `application.proprerties`, verificar se criou /data/gestao-despesa.mv.db
+<img width="277" height="101" alt="image" src="https://github.com/user-attachments/assets/3f52e8c5-8b41-414f-b4d2-7e6a48c858e4" />
+
+### Abrir H2-console
+
+http://localhost:8080/h2-console/
+
+JDBC URL: `jdbc:h2:file:./data/gestao-despesa`
+User Name: `sa`
+Password: ``
+
+<img width="829" height="668" alt="image" src="https://github.com/user-attachments/assets/70923154-81b0-4319-8a15-cc3639e22d97" />
+
+
+### Spring Data para Tabelas no H2
+[01:25:40 - Spring Data para criar as Tabelas no H2](https://youtu.be/0V8OKTYNeU8?t=5140)
+
+```properties
+(...)
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.dll-auto=update
+
+```
+
+
+---
 ---
 
 # [2025-10-08 Paramos 01:18:40](https://youtu.be/0V8OKTYNeU8?t=4720)
