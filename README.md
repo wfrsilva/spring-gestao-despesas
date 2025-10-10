@@ -448,6 +448,6 @@ public class BuscarDespesaUseCase {
 
 # [2025-10-09 Paramos 01:48:10](https://youtu.be/0V8OKTYNeU8?t=6490)
 
-# [2025-10-09 Paramos 01:58:00](https://youtu.be/0V8OKTYNeU8?t=7080)
+# [2025-10-10 Paramos 01:58:00](https://youtu.be/0V8OKTYNeU8?t=7080)
   Inivavel ficar alterando so no MD.
   Comecar a codar de verdade.
