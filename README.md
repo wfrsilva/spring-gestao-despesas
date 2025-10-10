@@ -109,6 +109,10 @@ public class GestaoDespesaController(){
   @Autowired
   CadastroDespesaUseCase cadastroDespesaUseCase;
 
+  @autowired
+  BuscarDespesaUseCase buscarDespesaUseCase;
+
+
   @PostMapping("/create")
   public ResponseEntity<?> create(@RequestBody Despesa despesa)
   {
@@ -127,6 +131,17 @@ public class GestaoDespesaController(){
     }//catch
 
   }//create
+
+
+  @Getmapping("/{email}")
+  public List<Despesa> findByEmailAndDate(@PathVariable String email, @RequestPAram(required = false) LocalDate data)
+  {
+    System.out.println("Email: " + email);
+    System.out.println("Data: " + data);
+
+    return buscarDespesaUseCase.buscarPorEmailEData(email, data); 
+   }//findByEmailAndDate
+
 
 
 }//GestaoDespesasController
@@ -307,6 +322,11 @@ spring.jpa.hibernate.dll-auto=update
 
 public interface DespesaRepository extends JpaRepository<Despesa, UUID>{
 
+  List<Despesa> findByEmail(String email);
+
+  List<Despesa> findByEmailAndData(String email, LocalDate data);
+
+
 }//DespesaRepository
 
 
@@ -360,7 +380,59 @@ public class ErrorMessage {
 
 ---
 
+
+
+
+
+### Criando Busca
+[01:48:40 - Criar Busca](https://youtu.be/0V8OKTYNeU8?t=6520)
+
+Apos configurar a classe [GestaoDespesaController.java](https://github.com/wfrsilva/spring-gestao-despesas/edit/main/README.md#criando-gestaodespesacontroller), rodar o get:
+ThunderClient ou outro (arquivos get.http).
+
+GET > http://localhost:8080/gestao/wfrsilva@gmail.com
+
 ---
+
+
+
+
+
+
+
+### Criando BuscarDespesaUseCase.java
+[01:53:35 - Criar BuscarDespesaUseCase.java](https://youtu.be/0V8OKTYNeU8?t=6815)
+- `../useCase/BuscarDespesaUseCase.java.java`
+
+```java
+
+public class BuscarDespesaUseCase {
+
+  @Autowired
+  private DespesaRepository despesaRepository;
+
+  public List<Despesa> buscarPorEmailEData(String email, LocalDate data)
+  {
+    List<Despesa> despesas;
+
+    if(data != null)
+    {
+      despesas = despesaRepository.findByEmailAndData(email, data);
+    }//if
+    else
+    {
+      despesas = despesaRepository.findByEmail(email);
+    }//else
+
+  }//buscarPorEmailEData
+
+  return despesas;
+  
+}//BuscarDespesaUseCase
+
+```
+
+- 
 ---
 
 ---
@@ -376,3 +448,6 @@ public class ErrorMessage {
 
 # [2025-10-09 Paramos 01:48:10](https://youtu.be/0V8OKTYNeU8?t=6490)
 
+# [2025-10-09 Paramos 01:58:00](https://youtu.be/0V8OKTYNeU8?t=7080)
+  Inivavel ficar alterando so no MD.
+  Comecar a codar de verdade.
