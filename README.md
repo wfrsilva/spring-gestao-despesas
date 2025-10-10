@@ -89,6 +89,7 @@ http://localhot:8080/javadevweek/helloworld
 - Criar o pacote (pasta/diretorio) : `entity`
 - Criar o pacote (pasta/diretorio) : `useCase`
 - Criar o pacote (pasta/diretorio) : `repository`
+- Criar o pacote (pasta/diretorio) : `custom_message` [01:45:55]
 
 
 ---
@@ -121,7 +122,8 @@ public class GestaoDespesaController(){
     }//try
     catch(IllegalArgumentException e)
     {
-      return ResponseEntity.status(400).body(e.getMessage());
+      var errorMessage = new ErrorMessage(e.getMessage(), "INVALID_PARAMS")
+      return ResponseEntity.status(400).body(errorMessage);
     }//catch
 
   }//create
@@ -312,9 +314,49 @@ public interface DespesaRepository extends JpaRepository<Despesa, UUID>{
 
 ---
 
-###
-[]()
+### Criando ErrorMessage.java
+[01:46:00 - Criar ErrorMessage.java](https://youtu.be/0V8OKTYNeU8?t=6360)
+- `../custom_message/ErrorMessage.java`
 
+```java
+
+public class ErrorMessage {
+
+  private String message;
+  private String type;
+
+  public ErrorMessage(String message, String type)
+  {
+    this.messge = message;
+    this.type = type;
+  }// contructor allargs
+
+  public String getMessage()
+  {
+    return message;
+  }//getMessage
+
+  public void setMessage(message)
+  {
+    this.message = message;
+  }//setMessage
+
+  public String getType()
+  {
+    return type;
+  }//getType
+
+  public void setType(type)
+  {
+    this.type = type;
+  }
+
+}//ErrorMessage
+
+
+
+
+```
 
 ---
 
