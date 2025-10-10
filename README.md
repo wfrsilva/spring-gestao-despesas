@@ -88,6 +88,7 @@ http://localhot:8080/javadevweek/helloworld
 - Criar o pacote (pasta/diretorio) : `controller`
 - Criar o pacote (pasta/diretorio) : `entity`
 - Criar o pacote (pasta/diretorio) : `useCase`
+- Criar o pacote (pasta/diretorio) : `repository`
 
 
 ---
@@ -144,7 +145,7 @@ public class Despesa{
   private String categoria;
   private String email;
 
-  @CreatDate
+  @CreationTimestamp
   private LocalDate data_criacao;
   
   //Criar GETs e SETs
@@ -169,9 +170,9 @@ public void setId(UUID id)
 ---
 
 
-### Criando CadastrDespesaUseCase.java
-[01:03:35 - Criar o CadastrDespesaUseCase.java](https://youtu.be/0V8OKTYNeU8?t=3815) 
-- `../useCase/Despesa.java`
+### Criando CadastroDespesaUseCase.java
+[01:03:35 - Criar o CadastroDespesaUseCase.java](https://youtu.be/0V8OKTYNeU8?t=3815) 
+- `../useCase/CadastroDespesaUseCase.java`
 
 ```java
 
@@ -179,11 +180,23 @@ public void setId(UUID id)
 public class CadastroDespesaUseCase{
 //controller recebe informacao e manda para o useCase
 
+  @Autowired
+  private DespesaRepository despesaRepository;
+  
   public void execute(Despesa despesa)
   {
-    System.out.println("Categoria " + despesa.getCategoria());
-    System.out.println("E-mail " + despesa.getEmail());
-  System.out.println(despesa);
+    //System.out.println("Categoria " + despesa.getCategoria());
+    //System.out.println("E-mail " + despesa.getEmail());
+    //System.out.println(despesa);
+
+    System.out.println("===== ANTES DE SALVAR =====");
+    System.out.println(despesa);
+    
+    despesa = despesaRepository.save(despesa);
+
+    System.out.println("===== DEPOIS DE SALVAR =====");
+    System.out.println(despesa);
+      
   }//execute
 
 
@@ -257,6 +270,19 @@ spring.jpa.hibernate.dll-auto=update
 
 ```
 
+---
+### Criando DespesaRepository.java
+[01:18:10 - Criar DespesaRepository.java](https://youtu.be/0V8OKTYNeU8?t=5292)
+- `../repository/DespesaRepository.java`
+
+```java
+
+public interface DespesaRepository extends JpaRepository<Despesa, UUID>{
+
+}//DespesaRepository
+
+
+```
 
 ---
 ---
