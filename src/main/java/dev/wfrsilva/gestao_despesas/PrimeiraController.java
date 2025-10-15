@@ -15,4 +15,13 @@ public class PrimeiraController {
 
     }//helloWorld
 
+    @GetMapping("/ola")
+    public String olaCodornas()
+    {
+        return "Olá seus Codornas!";
+        
+    }//olaCodornas
+
+
+
 }//PrimeiraController
