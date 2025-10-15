@@ -30,3 +30,26 @@ replay_pid*
 
 ### VS Code ###
 .vscode/
+
+
+# Ignore Maven build output
+target/
+
+# Ignore Eclipse / IntelliJ / VS Code project files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+.vscode/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore backup files
+*~
