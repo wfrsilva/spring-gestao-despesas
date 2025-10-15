@@ -42,6 +42,7 @@ http://localhost:8080/h2-console/
 
 
 ### application.proprerties
+`../src/main/resources/application.properties`
 Só foi mostrado, ainda nao configurado. Será mais a frente.
 [27:20 - application.proprerties](https://youtu.be/0V8OKTYNeU8?t=1640)
 
