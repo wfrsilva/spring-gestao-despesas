@@ -589,3 +589,78 @@ c03fde93-8003-4246-ac81-1f280bb76aa1	refeição	2025-06-11	2025-10-16	Cafe de Qu
 
 <img width="1079" height="495" alt="image" src="https://github.com/user-attachments/assets/82661efc-d14f-4a1f-bd99-3299743f1fd6" />
 
+
+# GET http://localhost:8080/gestao/wfrsilva@gmail.com
+
+`GET http://localhost:8080/gestao/wfrsilva@gmail.com`
+
+<img width="1842" height="950" alt="image" src="https://github.com/user-attachments/assets/0db8321b-06c2-4a26-9074-81cf53be8aaa" />
+
+```
+HTTP/1.1 200 
+Content-Disposition: inline;filename=f.txt
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 16 Oct 2025 20:22:45 GMT
+Connection: close
+
+[
+  {
+    "id": "4fe08db3-dc76-4cd9-b8d9-373b71608620",
+    "descricao": "Almoço de Segunda",
+    "data": "2025-06-09",
+    "valor": 45.00,
+    "categoria": "refeição",
+    "email": "wfrsilva@gmail.com",
+    "data_criacao": "2025-10-15"
+  },
+  {
+    "id": "9056c7cf-76ce-415f-9c3d-ee6fa0c60f1a",
+    "descricao": "Almoço de Terça",
+    "data": "2025-06-10",
+    "valor": 30.00,
+    "categoria": "refeição",
+    "email": "wfrsilva@gmail.com",
+    "data_criacao": "2025-10-15"
+  },
+  {
+    "id": "c03fde93-8003-4246-ac81-1f280bb76aa1",
+    "descricao": "Cafe de Quarta",
+    "data": "2025-06-11",
+    "valor": 15.00,
+    "categoria": "refeição",
+    "email": "wfrsilva@gmail.com",
+    "data_criacao": "2025-10-16"
+  }
+]
+
+```
+
+
+`GET http://localhost:8080/gestao/wfrsilva@gmail.com?data=2025-06-09`
+
+<img width="1844" height="899" alt="image" src="https://github.com/user-attachments/assets/4f46fcff-aeaf-4db8-aa31-a453b3e066af" />
+
+
+```
+HTTP/1.1 200 
+Content-Disposition: inline;filename=f.txt
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 16 Oct 2025 20:24:48 GMT
+Connection: close
+
+[
+  {
+    "id": "4fe08db3-dc76-4cd9-b8d9-373b71608620",
+    "descricao": "Almoço de Segunda",
+    "data": "2025-06-09",
+    "valor": 45.00,
+    "categoria": "refeição",
+    "email": "wfrsilva@gmail.com",
+    "data_criacao": "2025-10-15"
+  }
+]
+```
+
+
