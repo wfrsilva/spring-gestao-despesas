@@ -338,6 +338,9 @@ spring.jpa.hibernate.dll-auto=update
 
 ```java
 
+package dev.wfrsilva.gestao_despesas.repository;
+
+
 public interface DespesaRepository extends JpaRepository<Despesa, UUID>{
 
   List<Despesa> findByEmail(String email);
@@ -357,6 +360,8 @@ public interface DespesaRepository extends JpaRepository<Despesa, UUID>{
 - `../custom_message/ErrorMessage.java`
 
 ```java
+
+package dev.wfrsilva.gestao_despesas.custom_message;
 
 public class ErrorMessage {
 
@@ -423,6 +428,9 @@ GET > http://localhost:8080/gestao/wfrsilva@gmail.com
 - `../useCase/BuscarDespesaUseCase.java.java`
 
 ```java
+
+package dev.wfrsilva.gestao_despesas.useCase;
+
 
 public class BuscarDespesaUseCase {
 
