@@ -54,3 +54,7 @@ Thumbs.db
 
 # Ignore backup files
 *~
+
+# Banco H2 local
+data/*.mv.db
+data/*.trace.db
