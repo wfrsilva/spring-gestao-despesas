@@ -80,7 +80,14 @@ spring.application.
 
 ```
 
-http://localhot:8080/javadevweek/helloworld
+#### Comando para rodar no WSL
+wendel@wfrsilva.dev:~/cursosSpring/gestao-despesas$ `chmod +x mvnw`
+wendel@wfrsilva.dev:~/cursosSpring/gestao-despesas$ `./mvnw` `spring-boot:run`
+(...)
+
+
+
+http://localhost:8080/javadevweek/helloworld
 
 ### Criando as pastas (pacotes)
 
@@ -127,7 +134,7 @@ public class GestaoDespesaController(){
     }//try
     catch(IllegalArgumentException e)
     {
-      var errorMessage = new ErrorMessage(e.getMessage(), "INVALID_PARAMS")
+      var errorMessage = new ErrorMessage(e.getMessage(), "INVALID_PARAMS");
       return ResponseEntity.status(400).body(errorMessage);
     }//catch
 
@@ -135,7 +142,7 @@ public class GestaoDespesaController(){
 
 
   @Getmapping("/{email}")
-  public List<Despesa> findByEmailAndDate(@PathVariable String email, @RequestPAram(required = false) LocalDate data)
+  public List<Despesa> findByEmailAndDate(@PathVariable String email, @RequestParam(required = false) LocalDate data)
   {
     System.out.println("Email: " + email);
     System.out.println("Data: " + data);
