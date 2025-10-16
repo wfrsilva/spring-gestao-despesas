@@ -680,6 +680,9 @@ Connection: close
 - `../performance/GestaoDeDespesaSeeder.java`
 - [../danileao/../performance/GestaoDeDespesaSeeder.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/performance/GestaoDeDespesaSeeder.java)
 
+<img width="1914" height="486" alt="image" src="https://github.com/user-attachments/assets/0c1651c2-3edb-48e0-8e39-089010e3746b" />
+
+
 
 ```
 lable at 'jdbc:h2:file:./data/gestao-despesa'
