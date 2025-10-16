@@ -271,6 +271,8 @@ public class CadastroDespesaUseCase{
 ### Fazer um `request post` para testar.
 [01:08:40 - post no Thunder Client](https://youtu.be/0V8OKTYNeU8?t=4120)
 
+**NAO vai funcionar** - BuscarDespesaUseCase ainda nao foi criado!
+
 ThunderClient ou outro (arquivos `post.http`).
 
 POST > http://localhost:8080/gestao/create
