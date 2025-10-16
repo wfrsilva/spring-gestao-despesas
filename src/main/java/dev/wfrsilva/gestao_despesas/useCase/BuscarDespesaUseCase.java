@@ -15,7 +15,7 @@ public class BuscarDespesaUseCase {
     @Autowired
     private DespesaRepository despesaRepository;
 
-    public List <Despesa> buscarPorEmailEData(String email, LocalDate data)
+    public List <Despesa> execute(String email, LocalDate data)
     {
         List <Despesa> despesas;
 
@@ -31,5 +31,10 @@ public class BuscarDespesaUseCase {
         return despesas;
 
     }//buscarPorEmailEData
+
+    public List<Despesa> execute(String email, LocalDate data) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+    }
     
 }//BuscarDespesaUseCase

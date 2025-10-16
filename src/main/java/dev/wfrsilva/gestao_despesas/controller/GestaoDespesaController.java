@@ -28,13 +28,15 @@ public class GestaoDespesaController {
     @Autowired
     BuscarDespesaUseCase buscarDespesaUseCase;
     
-
+    //*wendel
+    
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody Despesa despesa)
     {
         try
         {
             var result = cadastroDespesaUseCase.execute(despesa);
+             return ResponseEntity.ok(result);
         }//try
         catch(IllegalArgumentException e)
         {
@@ -43,7 +45,10 @@ public class GestaoDespesaController {
         }//catch
 
     }//create
+    
+    // */
 
+  
 
     @GetMapping("/{email}")
     public List <Despesa> findByEmailAndDate(@PathVariable String email, @RequestParam(required = false) LocalDate data)
@@ -52,7 +57,7 @@ public class GestaoDespesaController {
         System.out.println("Email: " + email);
         System.out.println("Data: " + data);
 
-        return buscarDespesaUseCase.buscarPorEmailEData(email, data);
+        return buscarDespesaUseCase.execute(email, data);
         
     }//findByEmailAndDate
 
