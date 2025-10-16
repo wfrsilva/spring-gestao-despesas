@@ -111,7 +111,7 @@ http://localhost:8080/javadevweek/helloworld
 ### Criando GestaoDespesaController 
 [46:55 Criar o GestaoDespesaController.java](https://youtu.be/0V8OKTYNeU8?t=2815)
 - `../controller/GestaoDespesaController.java`
-
+- [../danileao/../controller/GestaoDespesaController.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/controller/GestaoDespesaController.java)
 
 ```java
 
@@ -171,6 +171,7 @@ public class GestaoDespesaController(){
 ### Criando Despesa.java
 [55:40 - Criar o Despesa.java](https://youtu.be/0V8OKTYNeU8?t=3340) 
 - `../entity/Despesa.java`
+- [../danileao/../entity/Despesa.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/entity/Despesa.java) 
 
 ```java
 
@@ -227,6 +228,7 @@ public void setId(UUID id)
 ### Criando CadastroDespesaUseCase.java
 [01:03:35 - Criar o CadastroDespesaUseCase.java](https://youtu.be/0V8OKTYNeU8?t=3815) 
 - `../useCase/CadastroDespesaUseCase.java`
+- [../danileao/../useCases/CadastroDespesaUseCase.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/useCases/CadastroDespesaUseCase.java)
 
 ```java
 
@@ -342,6 +344,7 @@ spring.jpa.hibernate.dll-auto=update
 ### Criando DespesaRepository.java
 [01:18:10 - Criar DespesaRepository.java](https://youtu.be/0V8OKTYNeU8?t=5292)
 - `../repository/DespesaRepository.java`
+- [../danileao/../repository/DespesaRepository.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/repository/DespesaRepository.java)
 
 ```java
 
@@ -365,6 +368,7 @@ public interface DespesaRepository extends JpaRepository<Despesa, UUID>{
 ### Criando ErrorMessage.java
 [01:46:00 - Criar ErrorMessage.java](https://youtu.be/0V8OKTYNeU8?t=6360)
 - `../custom_message/ErrorMessage.java`
+- [../danileao/../custom_messages/ErrorMessage.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/custom_messages/ErrorMessage.java)
 
 ```java
 
@@ -432,7 +436,8 @@ GET > http://localhost:8080/gestao/wfrsilva@gmail.com
 
 ### Criando BuscarDespesaUseCase.java
 [01:53:35 - Criar BuscarDespesaUseCase.java](https://youtu.be/0V8OKTYNeU8?t=6815)
-- `../useCase/BuscarDespesaUseCase.java.java`
+- `../useCase/BuscarDespesaUseCase.java`
+- [../danileao/../useCases/BuscarDespesaUseCase.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/useCases/BuscarDespesaUseCase.java)
 
 ```java
 
