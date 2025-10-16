@@ -110,6 +110,9 @@ http://localhost:8080/javadevweek/helloworld
 
 ```java
 
+package dev.wfrsilva.gestao_despesas.controller;
+
+
 @RequestMapping("/gestao")
 @RestController
 public class GestaoDespesaController(){
@@ -166,6 +169,8 @@ public class GestaoDespesaController(){
 
 ```java
 
+package dev.wfrsilva.gestao_despesas.entity;
+
 @Entity
 @Table(name="despesa")
 public class Despesa{
@@ -219,6 +224,9 @@ public void setId(UUID id)
 - `../useCase/CadastroDespesaUseCase.java`
 
 ```java
+
+package dev.wfrsilva.gestao_despesas.useCase;
+
 
 @Service
 public class CadastroDespesaUseCase{
