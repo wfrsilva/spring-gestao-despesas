@@ -32,9 +32,5 @@ public class BuscarDespesaUseCase {
 
     }//buscarPorEmailEData
 
-    public List<Despesa> execute(String email, LocalDate data) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'execute'");
-    }
     
 }//BuscarDespesaUseCase
