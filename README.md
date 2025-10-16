@@ -167,7 +167,7 @@ public class GestaoDespesaController(){
 ```java
 
 @Entity
-@table(name="despesa")
+@Table(name="despesa")
 public class Despesa{
 
   @Id
@@ -181,7 +181,7 @@ public class Despesa{
   private LocalDate data;
 
   @Column(nullable = false)
-  private BigaDEcimal valor;
+  private BigDecimal valor;
 
   @Column(length = 100, nullable = false)
   private String categoria;
