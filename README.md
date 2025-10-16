@@ -379,7 +379,7 @@ public class ErrorMessage {
     return message;
   }//getMessage
 
-  public void setMessage(message)
+  public void setMessage(String message)
   {
     this.message = message;
   }//setMessage
@@ -389,7 +389,7 @@ public class ErrorMessage {
     return type;
   }//getType
 
-  public void setType(type)
+  public void setType(String type)
   {
     this.type = type;
   }
