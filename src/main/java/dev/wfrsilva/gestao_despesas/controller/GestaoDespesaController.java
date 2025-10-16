@@ -24,7 +24,7 @@ public class GestaoDespesaController {
 
     @Autowired
     CadastroDespesaUseCase cadastroDespesaUseCase;
-
+    
     @Autowired
     BuscarDespesaUseCase buscarDespesaUseCase;
     

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.wfrsilva.gestao_despesas.entity.Despesa;
+import dev.wfrsilva.gestao_despesas.repository.DespesaRepository;
 
 
 @Service

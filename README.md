@@ -431,7 +431,7 @@ GET > http://localhost:8080/gestao/wfrsilva@gmail.com
 
 package dev.wfrsilva.gestao_despesas.useCase;
 
-
+@Service
 public class BuscarDespesaUseCase {
 
   @Autowired
