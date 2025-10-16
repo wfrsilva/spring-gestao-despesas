@@ -580,11 +580,15 @@ Password: ` `
 
 
 
-SELECT * FROM DESPESA;
-ID  	CATEGORIA  	DATA  	DATA_CRIACAO  	DESCRICAO  	EMAIL  	VALOR  
-4fe08db3-dc76-4cd9-b8d9-373b71608620	refeição	2025-06-09	2025-10-15	Almoço de Segunda	wfrsilva@gmail.com	45.00
-9056c7cf-76ce-415f-9c3d-ee6fa0c60f1a	refeição	2025-06-10	2025-10-15	Almoço de Terça	wfrsilva@gmail.com	30.00
-c03fde93-8003-4246-ac81-1f280bb76aa1	refeição	2025-06-11	2025-10-16	Cafe de Quarta	wfrsilva@gmail.com	15.00
+`SELECT * FROM DESPESA;`
+
+| ID                                   | CATEGORIA | DATA       | DATA_CRIACAO | DESCRICAO         | EMAIL              | VALOR |
+|--------------------------------------|------------|-------------|---------------|-------------------|--------------------|-------|
+| 4fe08db3-dc76-4cd9-b8d9-373b71608620 | refeição   | 2025-06-09  | 2025-10-15    | Almoço de Segunda | wfrsilva@gmail.com | 45.00 |
+| 9056c7cf-76ce-415f-9c3d-ee6fa0c60f1a | refeição   | 2025-06-10  | 2025-10-15    | Almoço de Terça   | wfrsilva@gmail.com | 30.00 |
+| c03fde93-8003-4246-ac81-1f280bb76aa1 | refeição   | 2025-06-11  | 2025-10-16    | Cafe de Quarta    | wfrsilva@gmail.com | 15.00 |
+
+
 (3 rows, 1 ms)
 
 <img width="1079" height="495" alt="image" src="https://github.com/user-attachments/assets/82661efc-d14f-4a1f-bd99-3299743f1fd6" />
