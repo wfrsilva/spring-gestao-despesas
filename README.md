@@ -493,7 +493,7 @@ public class BuscarDespesaUseCase {
   Comecar a codar de verdade.
 
 
-  ---
+
   ---
 
 # 2025-10-16 - Corrigidos alguns javas
@@ -717,3 +717,22 @@ SELECT count(*) FROM DESPESA
 | 150004 |
 (1 row, 4 ms)
 
+# http://localhost:8080/gestao/performance/sem-paginacao
+
+Requesitando os 1504 registros no localhost
+
+http://localhost:8080/gestao/performance/sem-paginacao
+
+<img width="1907" height="835" alt="image" src="https://github.com/user-attachments/assets/26f31135-1001-4359-a4e3-dc564ffaec7f" />
+
+```
+[{"id":"4fe08db3-dc76-4cd9-b8d9-373b71608620","descricao":"Almoço de Segunda","data":"2025-06-09","valor":45,"categoria":"refeição","email":"wfrsilva@gmail.com","data_criacao":"2025-10-15"},{"id":"9056c7cf-76ce-415f-9c3d-ee6fa0c60f1a","descricao":"Almoço de Terça","data":"2025-06-10","valor":30,"categoria":"refeição","email":"wfrsilva@gmail.com","data_criacao":"2025-10-15"},{"id":"c03fde93-8003-4246-ac81-1f280bb76aa1","descricao":"Cafe de Quarta","data":"2025-06-11","valor":15,"categoria":"refeição","email":"wfrsilva@gmail.com","data_criacao":"2025-10-16"},{"id":"6c6b360b-6de3-47a5-8ca9-f4af84f35dcb","descricao":"Gasto nº: 0","data":"2025-10-16","valor":10,"categoria":"TESTE","email":"performance@gmail.com","data_criacao":"2025-10-16"},{"id":"da569865-56c8-4029-9b18-b7f5ffd54ddb","descricao":"Gasto nº: 1","data":"2025-10-15","valor":11,"categoria":"TESTE","email":"performance@gmail.com","data_criacao":"2025-10-16"},{"id":"555c4cbf-21f1-4b92-99b2-53f3c041e0a0","descricao":"Gasto nº: 2","data":"2025-10-14","valor":12,"categoria":"TESTE","email":"performance@gmail.com","data_criacao":"2025-10-16"},{"id":"b74f07f7-bf87-4e98-b484-b88af4e9c140","descricao":"Gasto nº: 3","data":"2025-10-13","valor":13,"categoria":"TESTE","email":"performance@gmail.com","data_criacao":"2025-10-16"},{"id":"8abe6470-6da4-4b82-8cb6-3c7e17b4f421","descricao":"Gasto nº: 4","data":"2025-10-12","valor":14,"categoria":"TESTE","email":"performance@gmail.com","data_criacao":"2025-10-16"},{"id":"32c56210-373f-4d49-8ebe-d5b2adf44031","descricao":"Gasto nº: 5","data":"2025-10-11","valor":15,"categoria":"TESTE","email":"performance@gmail.com","data_criacao":"2025-10-16"},{"id":"6340ab97-6d5a-49f1-a27e-632a81eacc48","descricao":"Gasto nº: 6","data":"2025-10-10","valor":16,"categoria":"TESTE","email":"performance@gmail.com","data_criacao":"2025-10-16"},{"id":"6641c84a-212f-48d2-bcd0-752ff1dbc2cb","descricao":"Gasto nº: 7","data":"2025-10-09","valor":17,"categoria":"TESTE","email":"performance@gmail.com","data_criacao":"2025-10-16"},{"id":"93b1e74d-1b28-42ef-b4b3-262d49ab0e00","descricao":"Gasto nº: 8","data":"2025-10-08","valor":18,"categoria":"TESTE","email":"performance@gmail.com","data_criacao":"2025-10-16"},{"id":"6e853328-ee51-40a2-b27b-748f2faea09d","descricao":"Gasto nº: 9","data":"2025-10-07"
+(...)
+```
+
+# [2025-10-16 Paramos 02:21:30](https://youtu.be/0V8OKTYNeU8?t=8490)
+  Rodamos http://localhost:8080/gestao/performance/sem-paginacao
+
+
+
+  ---
