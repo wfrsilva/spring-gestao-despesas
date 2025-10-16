@@ -692,3 +692,28 @@ lable at 'jdbc:h2:file:./data/gestao-despesa'
 Rodando junco com a Aplicação
 2025-10-16T18:14:58.845-03:00  INFO 6695 --- [Gestao de Despesas Pessoais] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
 ```
+
+
+
+<img width="1904" height="359" alt="image" src="https://github.com/user-attachments/assets/c1cb7305-df5a-4d9f-8777-29d20bd15d69" />
+
+
+```
+2025-10-16T19:29:05.934-03:00  INFO 6695 --- [Gestao de Despesas Pessoais] [  restartedMain] .w.g.GestaoDeDespesasPessoaisApplication : Started GestaoDeDespesasPessoaisApplication in 0.409 seconds (process running for 10625.657)
+Iniciando seed
+Finalizou seed
+2025-10-16T19:29:16.348-03:00  INFO 6695 --- [Gestao de Despesas Pessoais] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+```
+
+http://localhost:8080/h2-console/login.do?jsessionid=7fec743b935a402b1cc4257223b43216
+
+SELECT count(*) FROM DESPESA 
+
+<img width="718" height="413" alt="image" src="https://github.com/user-attachments/assets/285caf60-6eea-47d7-ab78-0655240e857d" />
+
+
+| COUNT(*) |
+|----------|
+| 150004 |
+(1 row, 4 ms)
+
