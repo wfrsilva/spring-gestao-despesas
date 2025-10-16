@@ -240,7 +240,7 @@ public class CadastroDespesaUseCase{
   @Autowired
   private DespesaRepository despesaRepository;
   
-  public void execute(Despesa despesa)
+  public Despesa execute(Despesa despesa)
   {
     //System.out.println("Categoria " + despesa.getCategoria());
     //System.out.println("E-mail " + despesa.getEmail());
