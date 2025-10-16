@@ -103,6 +103,7 @@ http://localhost:8080/javadevweek/helloworld
 - Criar o pacote (pasta/diretorio) : `useCase`
 - Criar o pacote (pasta/diretorio) : `repository`
 - Criar o pacote (pasta/diretorio) : `custom_message` [01:45:55]
+- Criar o pacote (pasta/diretorio) : `performance` [02:08:00]
 
 
 ---
@@ -667,4 +668,24 @@ Connection: close
 ]
 ```
 
+---
 
+
+
+# Melhoria de performance
+
+[02:07:30:15 - Melhorando a performance](https://youtu.be/0V8OKTYNeU8?t=7650)
+
+[02:08:30 - Criar o GestaoDeDespesaSeeder.java](https://youtu.be/0V8OKTYNeU8?t=7710) 
+- `../performance/GestaoDeDespesaSeeder.java`
+- [../danileao/../performance/GestaoDeDespesaSeeder.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/performance/GestaoDeDespesaSeeder.java)
+
+
+```
+lable at 'jdbc:h2:file:./data/gestao-despesa'
+2025-10-16T18:14:58.831-03:00  INFO 6695 --- [Gestao de Despesas Pessoais] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-16T18:14:58.838-03:00  INFO 6695 --- [Gestao de Despesas Pessoais] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-16T18:14:58.843-03:00  INFO 6695 --- [Gestao de Despesas Pessoais] [  restartedMain] .w.g.GestaoDeDespesasPessoaisApplication : Started GestaoDeDespesasPessoaisApplication in 0.386 seconds (process running for 6339.843)
+Rodando junco com a Aplicação
+2025-10-16T18:14:58.845-03:00  INFO 6695 --- [Gestao de Despesas Pessoais] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+```
