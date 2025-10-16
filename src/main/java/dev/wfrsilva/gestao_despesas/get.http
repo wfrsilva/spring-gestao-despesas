@@ -1,0 +1,6 @@
+### GET
+
+GET http://localhost:8080/gestao/wfrsilva@gmail.com
+
+### GET com data
+GET http://localhost:8080/gestao/wfrsilva@gmail.com?data=2025-06-09
