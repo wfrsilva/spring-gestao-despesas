@@ -320,8 +320,10 @@ Ao salvar o `application.proprerties`, verificar se criou /data/gestao-despesa.m
 http://localhost:8080/h2-console/
 
 JDBC URL: `jdbc:h2:file:./data/gestao-despesa`
+
 User Name: `sa`
-Password: ``
+
+Password: ` `
 
 <img width="829" height="668" alt="image" src="https://github.com/user-attachments/assets/70923154-81b0-4319-8a15-cc3639e22d97" />
 
@@ -475,6 +477,7 @@ public class BuscarDespesaUseCase {
 
 
 
+
 # [2025-10-08 Paramos 01:18:40](https://youtu.be/0V8OKTYNeU8?t=4720)
 
 # [2025-10-09 Paramos 01:48:10](https://youtu.be/0V8OKTYNeU8?t=6490)
@@ -482,3 +485,102 @@ public class BuscarDespesaUseCase {
 # [2025-10-10 Paramos 01:58:00](https://youtu.be/0V8OKTYNeU8?t=7080)
   Inivavel ficar alterando so no MD.
   Comecar a codar de verdade.
+
+
+  ---
+  ---
+
+# 2025-10-16 - Corrigidos alguns javas
+
+Post executando corretamente.
+
+post.http
+
+```
+POST http://localhost:8080/gestao/create
+Content-Type: application/json
+
+{
+  "descricao": "Almoço de Segunda",
+  "valor":45,
+  "categoria":"refeição",
+  "email":"wfrsilva@gmail.com",
+  "data":"2025-06-09"
+}
+
+
+###
+
+POST http://localhost:8080/gestao/create
+Content-Type: application/json
+
+{
+  "descricao": "Almoço de Terça",
+  "valor":30,
+  "categoria":"refeição",
+  "email":"wfrsilva@gmail.com",
+  "data":"2025-06-10"
+}
+
+###
+
+POST http://localhost:8080/gestao/create
+Content-Type: application/json
+
+{
+  "descricao": "Cafe de Quarta",
+  "valor":15,
+  "categoria":"refeição",
+  "email":"wfrsilva@gmail.com",
+  "data":"2025-06-11"
+}
+
+
+### verificar se post OK
+
+GET http://localhost:8080/gestao/wfrsilva@gmail.com
+
+```
+<img width="690" height="400" alt="image" src="https://github.com/user-attachments/assets/f6164e7e-82fb-46aa-b741-4c362962d525" />
+
+
+
+```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 16 Oct 2025 03:08:08 GMT
+Connection: close
+
+{
+  "id": "c03fde93-8003-4246-ac81-1f280bb76aa1",
+  "descricao": "Cafe de Quarta",
+  "data": "2025-06-11",
+  "valor": 15,
+  "categoria": "refeição",
+  "email": "wfrsilva@gmail.com",
+  "data_criacao": "2025-10-16"
+}
+```
+<img width="594" height="733" alt="image" src="https://github.com/user-attachments/assets/a8bc7f1b-0315-4f11-bad6-fbb9610250b7" />
+
+
+http://localhost:8080/h2-console/login.do?jsessionid=5c0904737795fb57c05c59046d35ca39
+
+JDBC URL: `jdbc:h2:file:./data/gestao-despesa`
+
+User Name: `sa`
+
+Password: ` `
+
+
+
+SELECT * FROM DESPESA;
+ID  	CATEGORIA  	DATA  	DATA_CRIACAO  	DESCRICAO  	EMAIL  	VALOR  
+4fe08db3-dc76-4cd9-b8d9-373b71608620	refeição	2025-06-09	2025-10-15	Almoço de Segunda	wfrsilva@gmail.com	45.00
+9056c7cf-76ce-415f-9c3d-ee6fa0c60f1a	refeição	2025-06-10	2025-10-15	Almoço de Terça	wfrsilva@gmail.com	30.00
+c03fde93-8003-4246-ac81-1f280bb76aa1	refeição	2025-06-11	2025-10-16	Cafe de Quarta	wfrsilva@gmail.com	15.00
+(3 rows, 1 ms)
+
+<img width="1079" height="495" alt="image" src="https://github.com/user-attachments/assets/82661efc-d14f-4a1f-bd99-3299743f1fd6" />
+
