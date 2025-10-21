@@ -1188,6 +1188,10 @@ public class GestaoDespesaPerformance {
 Tempo (com paginação): 3387 ms
 
 
+<img width="1906" height="499" alt="image" src="https://github.com/user-attachments/assets/528a84f2-1180-44a5-81ee-14217a7047e2" />
+
+
+
 
 ```json
 
@@ -1238,3 +1242,6 @@ Tempo (com paginação): 3387 ms
 }
 
 ```
+
+<img width="827" height="982" alt="image" src="https://github.com/user-attachments/assets/c3c4220f-4f2e-460b-bbc4-cba0d46f1dab" />
+
