@@ -1,0 +1,42 @@
+POST https://spring-gestao-despesas.onrender.com/gestao/create
+Content-Type: application/json
+
+{
+  "descricao": "Almoço de Segunda",
+  "valor":45,
+  "categoria":"refeição",
+  "email":"wfrsilva@gmail.com",
+  "data":"2025-06-09"
+}
+
+
+###
+
+POST https://spring-gestao-despesas.onrender.com/gestao/create
+Content-Type: application/json
+
+{
+  "descricao": "Almoço de Terça",
+  "valor":30,
+  "categoria":"refeição",
+  "email":"wfrsilva@gmail.com",
+  "data":"2025-06-10"
+}
+
+###
+
+POST https://spring-gestao-despesas.onrender.com/gestao/create
+Content-Type: application/json
+
+{
+  "descricao": "Cafe de Quarta",
+  "valor":15,
+  "categoria":"refeição",
+  "email":"wfrsilva@gmail.com",
+  "data":"2025-06-11"
+}
+
+
+### verificar se post OK
+
+GET https://spring-gestao-despesas.onrender.com/gestao/wfrsilva@gmail.com
