@@ -1260,8 +1260,15 @@ https://dashboard.render.com/
 - Default demais
 - Free
 - Deploy web Service
-
+  
 Demora um pouco, segundo professora ([02:48:30](https://youtu.be/0V8OKTYNeU8?t=10110))
+
+<img width="383" height="661" alt="image" src="https://github.com/user-attachments/assets/7368964b-41b7-4e74-baf7-860ee4b18530" />
+<img width="1242" height="839" alt="image" src="https://github.com/user-attachments/assets/2d0545dc-2d53-4138-b1b6-2e630ea7da4d" />
+<img width="1213" height="253" alt="image" src="https://github.com/user-attachments/assets/b2e99834-6d33-4642-a22a-e0ce0b8a7512" />
+<img width="1825" height="612" alt="image" src="https://github.com/user-attachments/assets/588a1180-50fa-4aab-a544-b8edf0127e5e" />
+
+
 
 
 
@@ -1290,6 +1297,85 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 ## Deploy em andamento
 
 https://dashboard.render.com/web/srv-d3s0qbre5dus738htbjg/deploys/dep-d3s0qc3e5dus738htbq0
+
+<img width="1781" height="957" alt="image" src="https://github.com/user-attachments/assets/cc16f3be-6f3f-4e04-a233-fca8168022fb" />
+
+
+<img width="1560" height="816" alt="image" src="https://github.com/user-attachments/assets/e20bca3d-d45b-4003-bca0-f79cb4a30fc4" />
+
+
+## https://spring-gestao-despesas.onrender.com/gestao/performance/cache/performance@gmail.com?page=0&size=1000
+
+<img width="886" height="660" alt="image" src="https://github.com/user-attachments/assets/e476dfd4-2e7c-4c99-9d9f-d6b6ab01c4b4" />
+
+```json
+
+{
+  "content": [],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 1000,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "totalPages": 0,
+  "totalElements": 0,
+  "last": true,
+  "size": 1000,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 0,
+  "first": true,
+  "empty": true
+}
+
+```
+
+
+https://spring-gestao-despesas.onrender.com/gestao/performance/com-paginacao/wfrsilva@gmail.com?page=0&size=10
+
+
+```json
+{
+  "content": [],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 0,
+  "totalElements": 0,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 0,
+  "first": true,
+  "empty": true
+}
+
+```
 
 
 ---
