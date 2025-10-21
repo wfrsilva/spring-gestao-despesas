@@ -1245,3 +1245,45 @@ Tempo (com paginação): 3387 ms
 
 <img width="827" height="982" alt="image" src="https://github.com/user-attachments/assets/c3c4220f-4f2e-460b-bbc4-cba0d46f1dab" />
 
+### Deploy em produção
+[02:44:25 - Deploy em produção](https://youtu.be/0V8OKTYNeU8?t=9865) 
+
+## https://render.com/
+
+https://dashboard.render.com/
+
+- + Add new
+- Web Service
+- github
+- wfrsilva/spring-gestao-despesas
+- Docker (Não tem java)
+
+
+##Dockerfile
+
+
+- `../wfrsilva/spring-gestao-despesas/Dockerfile`
+- [../danileao/javadevweek/Dockerfile](https://github.com/danileao/javadevweek/blob/main/Dockerfile) 
+
+```dockerfile
+
+# Usa a imagem do Maven para compilar a aplicação
+FROM maven:3.8.6-eclipse-temurin-17 AS builder
+WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
+
+# Usa uma imagem do JDK para rodar o .jar gerado
+FROM eclipse-temurin:17-jdk
+WORKDIR /app
+COPY --from=builder /app/target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
+```
+
+
+
+---
+---
+---
+
