@@ -982,9 +982,11 @@ public class GestaoDespesaPerformance {
 (...) //Codigo oculto para nao repetir
 
 
+public class GestaoDespesaPerformance {
+
 (...) //Codigo oculto para nao repetir
 
-public class GestaoDespesaPerformance {
+
   
     @GetMapping("/com-paginacao/{email}") // localhost:8080?page=0&size=10
     public ResponseEntity<Page<Despesa>> listarComPaginacao(@PathVariable String email, Pageable pageable) {
@@ -1001,5 +1003,22 @@ public class GestaoDespesaPerformance {
     (...) //Codigo oculto para nao repetir
 
 
+
+```
+
+- `../repository/DespesaRepository.java`
+- [../danileao/../performance/GestaoDespesaPerformance.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/repository/DespesaRepository.java)
+
+```java
+(...) //Codigo oculto para nao repetir
+
+
+public interface DespesaRepository extends JpaRepository<Despesa, UUID> {
+
+(...) //Codigo oculto para nao repetir
+
+  Page<Despesa> findByEmail(String email, Pageable pageable);
+
+}//DespesaRepository
 
 ```
