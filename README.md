@@ -1256,7 +1256,13 @@ https://dashboard.render.com/
 - Web Service
 - github
 - wfrsilva/spring-gestao-despesas
-- Docker (Não tem java)
+- Docker (Não tem java) - Subir o dockerfile no github
+- Default demais
+- Free
+- Deploy web Service
+
+Demora um pouco, segundo professora ([02:48:30](https://youtu.be/0V8OKTYNeU8?t=10110))
+
 
 
 ##Dockerfile
@@ -1281,6 +1287,9 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 
 ```
 
+## Deploy em andamento
+
+https://dashboard.render.com/web/srv-d3s0qbre5dus738htbjg/deploys/dep-d3s0qc3e5dus738htbq0
 
 
 ---
