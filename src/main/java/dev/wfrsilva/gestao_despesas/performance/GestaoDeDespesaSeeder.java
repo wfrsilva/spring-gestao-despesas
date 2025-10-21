@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import dev.wfrsilva.gestao_despesas.entity.Despesa;
 import dev.wfrsilva.gestao_despesas.repository.DespesaRepository;
 
-@Component
+//@Component //comentar para parar de gerar seeds
 public class GestaoDeDespesaSeeder implements CommandLineRunner {
 
     @Autowired
