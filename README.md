@@ -1378,7 +1378,112 @@ https://spring-gestao-despesas.onrender.com/gestao/performance/com-paginacao/wfr
 ```
 
 
+
+
 ---
+
+# Post no https://spring-gestao-despesas.onrender.com/
+
+Criado arquivo post-render.http
+<img width="1839" height="978" alt="image" src="https://github.com/user-attachments/assets/07f0a0f4-1cdc-4702-b231-2cf6de715ff9" />
+
+```
+POST https://spring-gestao-despesas.onrender.com/gestao/create
+Content-Type: application/json
+
+{
+  "descricao": "Almoço de Segunda",
+  "valor":45,
+  "categoria":"refeição",
+  "email":"wfrsilva@gmail.com",
+  "data":"2025-06-09"
+}
+```
+
+```
+HTTP/1.1 200 OK
+Date: Tue, 21 Oct 2025 23:06:23 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: close
+rndr-id: 8fcf6da2-bfe3-42ac
+vary: Accept-Encoding
+x-render-origin-server: Render
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 992467abd831b707-GRU
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400
+
+{
+  "id": "b2141d39-3756-4feb-87af-2d1539a934a6",
+  "descricao": "Almoço de Segunda",
+  "data": "2025-06-09",
+  "valor": 45,
+  "categoria": "refeição",
+  "email": "wfrsilva@gmail.com",
+  "data_criacao": "2025-10-21"
+}
+
+```
+
+
+
+
+
+## https://spring-gestao-despesas.onrender.com/gestao/performance/com-paginacao/wfrsilva@gmail.com?page=0&size=10
+
+
+<img width="934" height="869" alt="image" src="https://github.com/user-attachments/assets/231a0133-594f-45d2-a937-8ee100397d75" />
+
+```json
+{
+  "content": [
+    {
+      "id": "4bc160a8-176d-4ac8-b790-59487ca27464",
+      "descricao": "Almoço de Terça",
+      "data": "2025-06-10",
+      "valor": 30,
+      "categoria": "refeição",
+      "email": "wfrsilva@gmail.com",
+      "data_criacao": "2025-10-21"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 1,
+  "totalElements": 1,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 1,
+  "first": true,
+  "empty": false
+}
+```
+
+# Deploy com @Component do GestaoDeDespesaSeeder
+
+Fazer um deploy no render.com com o Component descomentado
+```java
+//@Component //comentar para parar de gerar seeds
+public class GestaoDeDespesaSeeder
+```
 ---
 ---
 
