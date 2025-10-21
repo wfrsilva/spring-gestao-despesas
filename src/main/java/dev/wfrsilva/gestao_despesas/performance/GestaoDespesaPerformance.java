@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,5 +47,20 @@ public class GestaoDespesaPerformance {
 
 
     }//listarComPaginacao
+
+    @GetMapping("/com-paginacao/{email}")
+    public ResponseEntity <Page <Despesa> > listarComPaginacao(@PathVariable String email, Pageable pageable)
+    {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+
+        var despesas = repository.findByEmail(email, pageable);
+        stopWatch.stop();
+
+        System.out.println("Tempo (com paginação): " + stopWatch.getTotalTimeMillis() + " ms");
+
+        return ResponseEntity.ok(despesas);
+
+    }//listarComPaginacao/{email}
     
 }//GestaoDespesaPerformance
