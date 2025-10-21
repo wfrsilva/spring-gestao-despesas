@@ -1134,3 +1134,107 @@ http://localhost:8080/h2-console/login.do?jsessionid=331f5b339ef6cbdf8ef39836233
 
 
   ---
+
+
+# Conceito de cache - cacheComPaginacao - GestaoDespesaPerformance
+
+
+[02:33:25 - Cacheable e com-paginacao/{email}](https://youtu.be/0V8OKTYNeU8?t=9205)
+
+- `../performance/GestaoDespesaPerformance.java`
+- [../danileao/../performance/GestaoDespesaPerformance.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/performance/GestaoDespesaPerformance.java)
+
+```java
+
+(...) //Codigo oculto para nao repetir
+
+
+@EnableCaching
+public class GestaoDespesaPerformance {
+
+(...) //Codigo oculto para nao repetir
+
+
+ @Cacheable(value = "gastosPorEmailCache", key = "#email + '-'+ #pageable.pageNumber + '-' + #pageable.pageSize + '-'")
+    @GetMapping("/cache/{email}")
+    public ResponseEntity<Page<Despesa>> cacheComPaginacao(@PathVariable String email, Pageable pageable) 
+	{
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+
+        var despesas = repository.findByEmail(email, pageable);
+        stopWatch.stop();
+
+        System.out.println("Tempo (com paginação): " + stopWatch.getTotalTimeMillis() + " ms");
+        return ResponseEntity.ok(despesas);
+		
+   }//cacheComPaginacao 
+    
+}//GestaoDespesaPerformance
+
+
+```
+
+
+## http://localhost:8080/gestao/performance/cache/performance@gmail.com?page=0&size=1000
+
+3387 ms só na primeira vez, ao dar F5 eh instantaneo, cache funcionando.
+
+
+2025-10-21T16:15:46.254-03:00  WARN 4795 --- [Gestao de Despesas Pessoais] [nio-8080-exec-1] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+        For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+        or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+Tempo (com paginação): 3387 ms
+
+
+
+```json
+
+{
+      "id": "e812d9ef-4d3f-4315-bf11-b38ad9344d42",
+      "descricao": "Gasto n: 998",
+      "data": "2025-10-08",
+      "valor": 58,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    },
+    {
+      "id": "679f81e1-237a-430a-a357-3f6f08d826a5",
+      "descricao": "Gasto n: 999",
+      "data": "2025-10-07",
+      "valor": 59,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 1000,
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 1201,
+  "totalElements": 1200008,
+  "last": false,
+  "size": 1000,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "first": true,
+  "numberOfElements": 1000,
+  "empty": false
+}
+
+```
