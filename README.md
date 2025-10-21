@@ -1116,3 +1116,12 @@ http://localhost:8080/h2-console/login.do?jsessionid=331f5b339ef6cbdf8ef39836233
 
 
   ---
+
+
+
+
+# [2025-10-20 Paramos 02:33:00](https://youtu.be/0V8OKTYNeU8?t=9180) de 02:52:04
+  Rodamos http://localhost:8080/gestao/performance/com-paginacao/wfrsilva@gmail.com?page=0&size=10
+
+
+  ---
