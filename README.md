@@ -1022,3 +1022,97 @@ public interface DespesaRepository extends JpaRepository<Despesa, UUID> {
 }//DespesaRepository
 
 ```
+
+
+## http://localhost:8080/gestao/performance/com-paginacao/wfrsilva@gmail.com?page=0&size=10
+
+<img width="869" height="999" alt="image" src="https://github.com/user-attachments/assets/27156982-7079-4680-a863-e4058e68ec32" />
+
+```json
+{
+  "content": [
+    {
+      "id": "4fe08db3-dc76-4cd9-b8d9-373b71608620",
+      "descricao": "Almoço de Segunda",
+      "data": "2025-06-09",
+      "valor": 45,
+      "categoria": "refeição",
+      "email": "wfrsilva@gmail.com",
+      "data_criacao": "2025-10-15"
+    },
+    {
+      "id": "9056c7cf-76ce-415f-9c3d-ee6fa0c60f1a",
+      "descricao": "Almoço de Terça",
+      "data": "2025-06-10",
+      "valor": 30,
+      "categoria": "refeição",
+      "email": "wfrsilva@gmail.com",
+      "data_criacao": "2025-10-15"
+    },
+    {
+      "id": "c03fde93-8003-4246-ac81-1f280bb76aa1",
+      "descricao": "Cafe de Quarta",
+      "data": "2025-06-11",
+      "valor": 15,
+      "categoria": "refeição",
+      "email": "wfrsilva@gmail.com",
+      "data_criacao": "2025-10-16"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 1,
+  "totalElements": 3,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "first": true,
+  "numberOfElements": 3,
+  "empty": false
+}
+
+```
+
+## H2 Console 
+
+http://localhost:8080/h2-console/login.do?jsessionid=331f5b339ef6cbdf8ef39836233c0f6a
+
+<img width="1117" height="830" alt="image" src="https://github.com/user-attachments/assets/ce2d54c6-e911-49ee-bf72-f9a92a2f8e8b" />
+
+<img width="1117" height="921" alt="image" src="https://github.com/user-attachments/assets/4abfe5ff-c501-4d04-b2ec-7e98d2af2b63" />
+
+
+| ID                                   | CATEGORIA | DATA       | DATA_CRIACAO | DESCRICAO         | EMAIL                 | VALOR |
+|--------------------------------------|------------|-------------|---------------|-------------------|------------------------|--------|
+| 4fe08db3-dc76-4cd9-b8d9-373b71608620 | refeição   | 2025-06-09  | 2025-10-15    | Almoço de Segunda | wfrsilva@gmail.com     | 45.00  |
+| 9056c7cf-76ce-415f-9c3d-ee6fa0c60f1a | refeição   | 2025-06-10  | 2025-10-15    | Almoço de Terça   | wfrsilva@gmail.com     | 30.00  |
+| c03fde93-8003-4246-ac81-1f280bb76aa1 | refeição   | 2025-06-11  | 2025-10-16    | Cafe de Quarta    | wfrsilva@gmail.com     | 15.00  |
+| 3db681aa-a5f5-4d50-9f5f-56acee21de5b | TESTE      | 2025-10-16  | 2025-10-16    | Gasto n: 0        | performance@gmail.com  | 10.00  |
+| 7951053c-b3a3-488f-83e0-0c976a92a432 | TESTE      | 2025-10-15  | 2025-10-16    | Gasto n: 1        | performance@gmail.com  | 11.00  |
+| 04a494b9-2920-4a0f-9d98-2efcf8e73441 | TESTE      | 2025-10-14  | 2025-10-16    | Gasto n: 2        | performance@gmail.com  | 12.00  |
+| 6ffb71d7-06a5-4868-97fd-6c7d61667838 | TESTE      | 2025-10-13  | 2025-10-16    | Gasto n: 3        | performance@gmail.com  | 13.00  |
+| fd26dd63-d982-428b-b529-74217ad1e496 | TESTE      | 2025-10-12  | 2025-10-16    | Gasto n: 4        | performance@gmail.com  | 14.00  |
+| 087b9d60-8614-4927-a727-747f6087c769 | TESTE      | 2025-10-11  | 2025-10-16    | Gasto n: 5        | performance@gmail.com  | 15.00  |
+| 539f69b0-ca66-4edd-adb3-abc66a94a2ae | TESTE      | 2025-10-10  | 2025-10-16    | Gasto n: 6        | performance@gmail.com  | 16.00  |
+| 1ac640d2-c35a-4581-aca8-a5244863e73e | TESTE      | 2025-10-09  | 2025-10-16    | Gasto n: 7        | performance@gmail.com  | 17.00  |
+
+
+
+
+
+  ---
