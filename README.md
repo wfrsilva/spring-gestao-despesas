@@ -736,3 +736,270 @@ http://localhost:8080/gestao/performance/sem-paginacao
 
 
   ---
+
+  # @GetMapping("/com-paginacao")
+
+  [02:22:50 - com-paginacao - listarComPaginacao()](https://youtu.be/0V8OKTYNeU8?t=8570)
+  
+- `../performance/GestaoDespesaPerformance.java`
+- [../danileao/../performance/GestaoDespesaPerformance.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/performance/GestaoDespesaPerformance.java)
+
+
+```java
+
+(...) //Codigo oculto para nao repetir
+
+public class GestaoDespesaPerformance {
+
+(...) //Codigo oculto para nao repetir
+
+@GetMapping("/com-paginacao")
+    public ResponseEntity<Page<Despesa>> listarComPaginacao(Pageable pageable)
+    {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+
+        var despesas = repository.findAll(pageable);
+        stopWatch.stop();
+
+        System.out.println("Tempo (compaginacao): " + stopWatch.getTotalTimeMillis() + " ms");
+        return ResponseEntity.ok(despesas);
+
+
+    }//listarComPaginacao
+    
+}//GestaoDespesaPerformance
+```
+
+
+## http://localhost:8080/gestao/performance/com-paginacao?page=1&size=10
+
+```json
+{
+  "content": [
+    {
+      "id": "4fe08db3-dc76-4cd9-b8d9-373b71608620",
+      "descricao": "Almoço de Segunda",
+      "data": "2025-06-09",
+      "valor": 45,
+      "categoria": "refeição",
+      "email": "wfrsilva@gmail.com",
+      "data_criacao": "2025-10-15"
+    },
+    {
+      "id": "9056c7cf-76ce-415f-9c3d-ee6fa0c60f1a",
+      "descricao": "Almoço de Terça",
+      "data": "2025-06-10",
+      "valor": 30,
+      "categoria": "refeição",
+      "email": "wfrsilva@gmail.com",
+      "data_criacao": "2025-10-15"
+    },
+    {
+      "id": "c03fde93-8003-4246-ac81-1f280bb76aa1",
+      "descricao": "Cafe de Quarta",
+      "data": "2025-06-11",
+      "valor": 15,
+      "categoria": "refeição",
+      "email": "wfrsilva@gmail.com",
+      "data_criacao": "2025-10-16"
+    },
+    {
+      "id": "3db681aa-a5f5-4d50-9f5f-56acee21de5b",
+      "descricao": "Gasto n: 0",
+      "data": "2025-10-16",
+      "valor": 10,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    },
+    {
+      "id": "7951053c-b3a3-488f-83e0-0c976a92a432",
+      "descricao": "Gasto n: 1",
+      "data": "2025-10-15",
+      "valor": 11,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    },
+    {
+      "id": "04a494b9-2920-4a0f-9d98-2efcf8e73441",
+      "descricao": "Gasto n: 2",
+      "data": "2025-10-14",
+      "valor": 12,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    },
+    {
+      "id": "6ffb71d7-06a5-4868-97fd-6c7d61667838",
+      "descricao": "Gasto n: 3",
+      "data": "2025-10-13",
+      "valor": 13,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    },
+    {
+      "id": "fd26dd63-d982-428b-b529-74217ad1e496",
+      "descricao": "Gasto n: 4",
+      "data": "2025-10-12",
+      "valor": 14,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    },
+    {
+      "id": "087b9d60-8614-4927-a727-747f6087c769",
+      "descricao": "Gasto n: 5",
+      "data": "2025-10-11",
+      "valor": 15,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    },
+    {
+      "id": "539f69b0-ca66-4edd-adb3-abc66a94a2ae",
+      "descricao": "Gasto n: 6",
+      "data": "2025-10-10",
+      "valor": 16,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 75001,
+  "totalElements": 750008,
+  "last": false,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "first": true,
+  "numberOfElements": 10,
+  "empty": false
+}
+```
+<img width="738" height="995" alt="image" src="https://github.com/user-attachments/assets/2c09df70-83db-4809-917d-33ab1cc26c9f" />
+
+<img width="1898" height="171" alt="image" src="https://github.com/user-attachments/assets/40e6fdc0-a58e-45f7-8978-d29da491f6ed" />
+
+
+## http://localhost:8080/gestao/performance/com-paginacao?page=1&size=500
+
+<img width="678" height="981" alt="image" src="https://github.com/user-attachments/assets/51c3851e-6516-4a50-a2c3-334987a403aa" />
+
+```json
+(...) //Codigo oculto para nao repetir
+
+{
+      "id": "2b99ce3a-bc69-4133-861c-133b0eafa89d",
+      "descricao": "Gasto n: 494",
+      "data": "2025-10-02",
+      "valor": 54,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    },
+    {
+      "id": "0df72ea7-0d03-4b79-975f-d3bc078b7dc8",
+      "descricao": "Gasto n: 495",
+      "data": "2025-10-01",
+      "valor": 55,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    },
+    {
+      "id": "0033f804-46dd-4e27-9815-62be4d1c323b",
+      "descricao": "Gasto n: 496",
+      "data": "2025-09-30",
+      "valor": 56,
+      "categoria": "TESTE",
+      "email": "performance@gmail.com",
+      "data_criacao": "2025-10-16"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 500,
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 1501,
+  "totalElements": 750008,
+  "last": false,
+  "size": 500,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "first": true,
+  "numberOfElements": 500,
+  "empty": false
+}
+```
+
+<img width="1894" height="414" alt="image" src="https://github.com/user-attachments/assets/d8dfe0d4-873b-4c70-9025-d8ad9d56ce88" />
+
+
+
+---
+
+
+ # @GetMapping("/com-paginacao/{email}")
+
+  [02:29:45 - com-paginacao/{email} e - listarComPaginacao()](https://youtu.be/0V8OKTYNeU8?t=8985)
+  
+- `../performance/GestaoDespesaPerformance.java`
+- [../danileao/../performance/GestaoDespesaPerformance.java](https://github.com/danileao/javadevweek/blob/main/src/main/java/br/com/javadevweek/gestao_custos/performance/GestaoDespesaPerformance.java)
+
+
+```java
+(...) //Codigo oculto para nao repetir
+
+
+(...) //Codigo oculto para nao repetir
+
+public class GestaoDespesaPerformance {
+  
+    @GetMapping("/com-paginacao/{email}") // localhost:8080?page=0&size=10
+    public ResponseEntity<Page<Despesa>> listarComPaginacao(@PathVariable String email, Pageable pageable) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+
+        var despesas = repository.findByEmail(email, pageable);
+        stopWatch.stop();
+
+        System.out.println("Tempo (com paginação): " + stopWatch.getTotalTimeMillis() + " ms");
+        return ResponseEntity.ok(despesas);
+  }//listarComPaginacao email
+
+    (...) //Codigo oculto para nao repetir
+
+
+
+```
