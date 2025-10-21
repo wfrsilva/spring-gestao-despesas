@@ -86,9 +86,16 @@ spring.application.
 ```
 
 #### Comando para rodar no WSL
-wendel@wfrsilva.dev:~/cursosSpring/gestao-despesas$ ```chmod +x mvnw```
-wendel@wfrsilva.dev:~/cursosSpring/gestao-despesas$ ```./mvnw spring-boot:run```
+
+wendel@​wfrsilva.dev:~/cursosSpring/gestao-despesas$ `chmod +x mvnw`
+
+
+wendel@​wfrsilva.dev:~/cursosSpring/gestao-despesas$ `./mvnw spring-boot:run`
+
+
+
 (...)
+
 
 
 
