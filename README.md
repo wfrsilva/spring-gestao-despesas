@@ -315,7 +315,7 @@ spring.application.name=Gestao de Despesas Pessoais
 
 # ===== CONFIGURACOES H2 ======
 spring.datasource.url=jdbc:h2:file:./data/gestao-despesa
-spring.datasource.driveClassName=org.h2.Driver
+spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
