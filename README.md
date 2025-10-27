@@ -325,6 +325,9 @@ spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 Ao salvar o `application.proprerties`, verificar se criou /data/gestao-despesa.mv.db
 <img width="277" height="101" alt="image" src="https://github.com/user-attachments/assets/3f52e8c5-8b41-414f-b4d2-7e6a48c858e4" />
 
+<img width="487" height="168" alt="image" src="https://github.com/user-attachments/assets/5e17dec1-f7fb-496d-a265-e2e168cf5be9" />
+
+
 ### Abrir H2-console
 
 http://localhost:8080/h2-console/
