@@ -346,7 +346,7 @@ Password: ` `
 ```properties
 (...)
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-spring.jpa.hibernate.dll-auto=update
+spring.jpa.hibernate.ddl-auto=update
 
 ```
 
